@@ -1,0 +1,82 @@
+body {
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    color: #222;
+}
+
+.board-wrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 5px 2px;
+}
+
+.column .item {
+    margin: 10px 0;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.column.good .item {
+    background: rgba(0, 200, 0, 0.5);
+}
+
+.column.bad .item {
+    background: rgba(200, 0, 0, 0.5);
+}
+
+.column.actions .item {
+    background: rgba(100, 0, 100, 0.5);
+}
+
+.badge {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.badge img {
+    max-width: 190px;
+    float: left;
+}
+
+.title {
+    float: left;
+    width: 100%;
+    padding: 5px 0;
+    font-weight: bold;
+    background: black;
+    color: white;
+}
+
+button.add {
+    font-size: 18px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.swatch {
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    margin: 1px 10px 0 0;
+}
+
+.good .swatch {
+    background: rgba(0, 200, 0, 0.5);
+}
+
+.bad .swatch {
+    background: rgba(200, 0, 0, 0.5);
+}
+
+.actions .swatch {
+    background: rgba(100, 0, 100, 0.5);
+}
