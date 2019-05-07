@@ -14,14 +14,15 @@ Use valet to access retro.test
 
 ## Functionality
 _Current_
-1. New File created each week automatically
-2. Add comments to one of 3 columns
+- New File created each week automatically
+- Add comments to one of 3 columns
+- Previous weeks viable by appending `?week=18`
 
 _Planned_
-1. Per team boards (Semi done, hence the red directory in teams)
-2. Delete/Edit Existing comments
-3. Comment Authors (?)
-4. Reporting for historical boards (Older json files are not currently removed)
+- Per team boards (Semi done, hence the red directory in teams)
+- Delete/Edit Existing comments
+- Comment Authors (?)
+- Reporting for historical boards (Older json files are not currently removed)
 
 Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 
