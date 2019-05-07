@@ -27,6 +27,9 @@ $boardData = json_decode(file_get_contents($file));
 
 echo '<div class="board-wrapper">';
 echo '<div class="title">Dan\'s Super Awesome Space Board<br />Week ' . $week . '</div>';
+if (isset($currentWeek)) {
+    echo '<div class="titleTwo"><a href="/retro">Goto Current week ' . $currentWeek . '</a></div>';
+}
 
 foreach ($boardData as $type => $board) {
     echo '<div class="column '.$type.'">';
