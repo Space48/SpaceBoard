@@ -7,7 +7,8 @@
 
 <?php
 
-if ($week = $_REQUEST['week']) {
+if (isset($_REQUEST['week'])) {
+    $week = $_REQUEST;
     $date = new DateTime();
     $currentWeek = $date->format("W");
     if ($week > $currentWeek) {
@@ -17,6 +18,7 @@ if ($week = $_REQUEST['week']) {
     $date = new DateTime();
     $week = $date->format("W");
 }
+
 $file = dirname(__FILE__) . '/teams/red/week' . $week . '.json';
 
 if (!file_exists($file)) {
@@ -47,7 +49,7 @@ foreach ($boardData as $type => $board) {
     foreach ($board as $boardItem) {
         echo '<div class="item">' . $boardItem . '</div>';
     }
-    if (!$_REQUEST['week']) {
+    if (!isset($_REQUEST['week'])) {
         echo '<div class="item button" id="' . $type . 'Column"><button class="add" onclick="add' . $type . '()">Add</button></div>';
     }
     echo '</div>';
