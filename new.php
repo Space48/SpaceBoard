@@ -3,10 +3,11 @@
 $date = new DateTime();
 $week = $date->format("W");
 $boardData = json_decode(file_get_contents('teams/red/week' . $week . '.json'));
-
-$typeToAdd = $_REQUEST['type'];
+$typeToAdd = $_REQUEST['commentType'];
 $textToAdd = $_REQUEST['text'];
 
 $boardData->{$typeToAdd}[] = $textToAdd;
 
-file_put_contents('teams/red/week' . $week . '.json', json_encode($boardData));
+$data = json_encode($boardData);
+file_put_contents('teams/red/week' . $week . '.json', $data);
+print_r($data);

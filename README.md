@@ -3,33 +3,35 @@ Internal Tool to replace fun retro
 This is in place to provide a secure place to have the retro boards rather than the public fun retro boards.
 No longer requiring new accounts to be created on fun retro when the trial runs out.
 
+## To Do
+
 ## Deployment
 _Not currently setup_
 
 ## Setup
-Clone the repo
-git clone git@bitbucket.org:space48/retro.git
-
-Use valet to access retro.test
+1. Clone the repo
+1. git clone git@bitbucket.org:space48/retro.git
+1. Ensure you can load http://retro.test as this is currently how the backend (PHP) is accessed
+1. Run `npm install && npm start`
 
 ## Functionality
 _Current_
 
 1. New File created each week automatically
 
-2. Add comments to one of 3 columns
+1. Add comments to one of 3 columns
 
-3. Previous weeks viable by appending `?week=18`
+1. Previous weeks viable by appending `?week=18`
 
 _Planned_
 
 1. Per team boards (Semi done, hence the red directory in teams)
 
-2. Delete/Edit Existing comments
+1. Delete/Edit Existing comments
 
-3. Comment Authors (?)
+1. Comment Authors (?)
 
-4. Reporting for historical boards (Older json files are not currently removed)
+1. Reporting for historical boards (Older json files are not currently removed)
 
 Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 
