@@ -1,50 +1,31 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
-import { InterfaceTeamData } from '../../types/data';
+import React from 'react';
 import { Comments } from '../comment/Comments';
+import css from './column.module.css';
+import { NewComment } from '../comment/NewComment';
 
-interface interfaceProps {
+interface InterfaceProps {
     commentType: string,
     updateTeamData: Function,
     comments: string[]
 }
 
-const Column: React.FunctionComponent<interfaceProps> = (props: interfaceProps) => {
-    const [ comment, updateMessage ] = useState('');
+const convertFirstLetterToUppercase = (word : string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+};
 
-    /**
-     * @param {React.FormEvent<HTMLFormElement>} event
-     */
-    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-        event.preventDefault();
+const Column: React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
+    const { commentType, comments, updateTeamData} = props;
 
-        Axios.post('/new.php?commentType=' + props.commentType + '&text=' + comment)
-            .then(function (response: InterfaceTeamData) {
-                console.log(response);
-                props.updateTeamData(response.data);
-            })
-            .catch(function (error: Object) {
-                console.log(error);
-            });
-    };
-
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        updateMessage(event.target.value);
-    };
-
-    // todo: Render out comments
-    // todo: Hitting enter whilst typing results in an error?
     return (
-        <>
-            <h2>{props.commentType}</h2>
-            <Comments comments={props.comments}/>
-
-            <form onSubmit={handleFormSubmit}>
-                <textarea placeholder="Add your comment here" onChange={handleChange} />
-                <button type="submit">Add</button>
-            </form>
-        </>
-    );
+        <div className={`${css.column}`}>
+            <div className={`${css.name}`}>
+                <span className={`${css.colorPreview} background--${commentType}`} />
+                {convertFirstLetterToUppercase(props.commentType)}
+            </div>
+            <NewComment commentType={commentType} updateTeamData={updateTeamData}/>
+            <Comments commentType={commentType} comments={comments}/>
+        </div>
+    )
 };
 
 export default Column;
