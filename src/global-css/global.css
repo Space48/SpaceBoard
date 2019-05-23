@@ -6,4 +6,18 @@
 
 body {
     font-family: 'Muli', sans-serif;
+    line-height: 1.4;
+}
+
+button {
+    background: black;
+    color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background: white;
+    color: black;
 }

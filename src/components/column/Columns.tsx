@@ -5,14 +5,23 @@ import css from './columns.module.css';
 
 interface InterfaceProps {
     commentTypes: string[],
+    isFullWidthMode: boolean,
     teamData: InterfaceColumns,
     updateTeamData: Function
 }
 
-export const Columns : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => (
-    <div className={css.container}>
-        {props.commentTypes.map(commentType => {
-            return <Column key={commentType} comments={props.teamData[commentType]} updateTeamData={props.updateTeamData} commentType={commentType} />
-        })}
-    </div>
-);
+export const Columns : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
+    const displayMode = {
+        display: props.isFullWidthMode ? 'block' : 'flex'
+    };
+
+    return (
+        (
+            <div className={`${css.container}`} style={displayMode}>
+                {props.commentTypes.map(commentType => {
+                    return <Column key={commentType} comments={props.teamData[commentType]} updateTeamData={props.updateTeamData} commentType={commentType} />
+                })}
+            </div>
+        )
+    )
+};

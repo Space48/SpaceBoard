@@ -12,11 +12,11 @@ interface InterfaceProps {
 export const Comments = (props: InterfaceProps) => {
     return (
         <div className={css.container}>
-                <TransitionGroup>
+                <TransitionGroup component={null}>
                     {
-                        // Nothing unique to use as a key, index will be ok providing we never need to sort comments
-                        props.comments.map((comment: string, index: number) => (
-                                <CSSTransition key={index} timeout={200} classNames={{...commentAnimations}}>
+                        // todo: Use a unique ID as the key rather than the comment, using index breaks the animations?!
+                        props.comments.map((comment: string) => (
+                                <CSSTransition key={comment} timeout={200} classNames={{...commentAnimations}}>
                                     <Comment className={css.comment} comment={comment} commentType={props.commentType} />
                                 </CSSTransition>
                             )
