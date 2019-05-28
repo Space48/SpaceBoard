@@ -8,8 +8,8 @@ interface InterfaceProps {
     updateTeamData: Function
 }
 
-export const NewComment = (props: InterfaceProps) => {
-    const [ comment, updateMessage ] = useState('');
+export const NewComment : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
+    const [ comment, setComment ] = useState('');
 
     /**
      * @param {React.FormEvent<HTMLFormElement>} event
@@ -17,10 +17,14 @@ export const NewComment = (props: InterfaceProps) => {
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
 
+        // todo: Handle paragraphs, convert to array then map out inside p tags?
+        // console.log(comment.split('\n'));
+
         Axios.post('/new.php?commentType=' + props.commentType + '&text=' + comment)
             .then(function (response: InterfaceTeamData) {
                 console.log(response);
                 props.updateTeamData(response.data);
+                setComment('');
             })
             .catch(function (error: Object) {
                 console.log(error);
@@ -28,14 +32,13 @@ export const NewComment = (props: InterfaceProps) => {
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        updateMessage(event.target.value);
+        setComment(event.target.value);
     };
 
-    // todo: Fix - Hitting enter whilst typing results in an error
     return (
         <>
             <form onSubmit={handleFormSubmit} className={css.container}>
-                <textarea placeholder="Add your comment here" onChange={handleChange} className={css.textarea}/>
+                <textarea placeholder="Add your comment here" onChange={handleChange} className={css.textarea} value={comment}/>
                 <button type="submit" className={`${css.submit} background--${props.commentType}`}>Add</button>
             </form>
         </>

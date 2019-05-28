@@ -7,7 +7,7 @@ interface InterfaceProps {
     className: string
 }
 
-export const Comment = (props: InterfaceProps) => {
+export const Comment : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
     return (
         <div className={`${css.comment} ${props.className}`}>
             {props.comment}

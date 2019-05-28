@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Comment } from './Comment';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import css from './comments.module.css';
@@ -9,7 +9,7 @@ interface InterfaceProps {
     commentType: string
 }
 
-export const Comments = (props: InterfaceProps) => {
+export const Comments : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
     return (
         <div className={css.container}>
                 <TransitionGroup component={null}>
