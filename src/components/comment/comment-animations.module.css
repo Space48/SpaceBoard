@@ -1,4 +1,5 @@
-.enter {
+.enter,
+.exitActive {
     opacity: 0;
     transform: translateY(50px);
 }
@@ -8,8 +9,4 @@
 .enterDone {
     opacity: 1;
     transform: translateY(0);
-}
-
-.exitActive {
-    opacity: 0;
 }

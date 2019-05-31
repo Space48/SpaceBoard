@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { InterfaceTeamData } from '../../types/data';
 import css from './new-comment.module.css';
+import { baseUrl } from '../../utilities/urls';
 
 interface InterfaceProps {
     commentType: string,
@@ -17,14 +18,10 @@ export const NewComment : React.FunctionComponent<InterfaceProps> = (props: Inte
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
 
-        // todo: Handle paragraphs, convert to array then map out inside p tags?
-        // console.log(comment.split('\n'));
-
-        Axios.post('/new.php?commentType=' + props.commentType + '&text=' + comment)
+        Axios.post(`${baseUrl()}new.php?commentType=` + props.commentType + '&text=' + comment)
             .then(function (response: InterfaceTeamData) {
-                console.log(response);
                 props.updateTeamData(response.data);
-                setComment('');
+                setComment(''); // Reset the comment
             })
             .catch(function (error: Object) {
                 console.log(error);

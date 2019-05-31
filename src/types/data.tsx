@@ -1,4 +1,4 @@
-export type Team = 'red' | 'blue';
+export type Team = 'red' | 'black' | 'yellow';
 
 export interface InterfaceColumns {
     actions: string[],

@@ -34,7 +34,8 @@ _Planned_
 1. Reporting for historical boards (Older json files are not currently removed)
 
 _Possible_
-1. Support multi-line comments
+1. Choose custom colours
+1. Dark mode 
 
 Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 

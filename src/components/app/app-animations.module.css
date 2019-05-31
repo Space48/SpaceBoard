@@ -1,24 +1,15 @@
 .app {
     opacity: 0;
-    transition: opacity 0.3s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 
-.enter {
-    opacity: 0;
-}
-
-.enterDone {
-    opacity: 1;
-}
-
-.enterActive {
-    opacity: 1;
-}
-
-.exit{
-    opacity: 1;
-}
-
+.enter,
 .exitActive {
     opacity: 0;
+}
+
+.enterActive,
+.exit,
+.enterDone {
+    opacity: 1;
 }
