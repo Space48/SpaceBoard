@@ -1,7 +1,8 @@
 import React from 'react';
-import Column from './Column';
 import { InterfaceColumns } from '../../types/data';
 import css from './columns.module.css';
+import { NewComment } from '../comment/NewComment';
+import { Comments } from '../comment/Comments';
 
 interface InterfaceProps {
     commentTypes: string[],
@@ -10,18 +11,25 @@ interface InterfaceProps {
     updateTeamData: Function
 }
 
+const convertFirstLetterToUppercase = (word : string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+};
+
 export const Columns : React.FunctionComponent<InterfaceProps> = (props: InterfaceProps) => {
-    const displayMode = {
-        display: props.isFullWidthMode ? 'block' : 'flex'
-    };
+    const width = props.isFullWidthMode ? css.fullWidthMode : '';
 
     return (
-        (
-            <div className={`${css.container}`} style={displayMode}>
-                {props.commentTypes.map(commentType => {
-                    return <Column key={commentType} comments={props.teamData[commentType]} updateTeamData={props.updateTeamData} commentType={commentType} />
-                })}
-            </div>
-        )
+        <div className={`${css.container} ${width}`}>
+            {props.commentTypes.map(commentType => (
+                <div className={`${css.column}`} key={commentType}>
+                    <div className={`${css.name}`}>
+                        <span className={`${css.colorPreview} background--${commentType}`} />
+                        {convertFirstLetterToUppercase(commentType)}
+                    </div>
+                    <NewComment commentType={commentType} updateTeamData={props.updateTeamData}/>
+                    <Comments commentType={commentType} comments={props.teamData[commentType]}/>
+                </div>
+            ))}
+        </div>
     )
 };
