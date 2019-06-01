@@ -1,3 +1,4 @@
+export type DarkMode = boolean;
 export type Team = 'red' | 'black' | 'yellow';
 
 export interface InterfaceColumns {

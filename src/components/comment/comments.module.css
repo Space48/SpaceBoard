@@ -3,5 +3,15 @@
 }
 
 .comment {
+    border-bottom: 1px solid var(--color-off-white);
+    padding: 20px;
     transition: opacity 1s ease-in, transform 0.3s ease-out;
+}
+
+.comment:last-child {
+    border-bottom: 0;
+}
+
+.commentThemed {
+    border-color: var(--color-grey);
 }

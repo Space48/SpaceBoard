@@ -1,6 +1,6 @@
+import { InterfaceTeamData } from '../../types/data';
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { InterfaceTeamData } from '../../types/data';
 import css from './new-comment.module.css';
 import { baseUrl } from '../../utilities/urls';
 

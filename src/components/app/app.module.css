@@ -1,3 +1,8 @@
+.darkMode {
+    background: var(--color-grey-dark);
+    color: var(--color-off-white);
+}
+
 .container {
     display: flex;
 }

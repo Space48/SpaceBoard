@@ -1,4 +1,4 @@
-import { InterfaceColumns, InterfaceTeamData, Team } from '../../types/data';
+import { DarkMode, InterfaceColumns, InterfaceTeamData, Team } from '../../types/data';
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import getCurrentWeekNumber from '../../utilities/getWeekNumber';
@@ -26,6 +26,7 @@ const App : React.FunctionComponent = () => {
     const [ teamData, updateTeamData ] = useState<InterfaceColumns>(emptyTeamData);
     const [ shouldRender, setShouldRender ] = useState<boolean>(false);
     const [ fullWidthMode, setFullWidthMode ] = useState<boolean>(false);
+    const [ darkMode, setDarkMode ] = useState<DarkMode>(false); // todo: Use context rather than thread props
 
     // This is resonsible for updating the component state once when the component is mounted.
     // The empty array as a second argument means never update (no dependencies)
@@ -49,10 +50,12 @@ const App : React.FunctionComponent = () => {
     const widthBasedStyling = {
         fontSize: fullWidthMode ? '20px' : '16px'
     };
+    const theme = darkMode ? css.darkMode : '';
     const width = fullWidthMode ? css.containerFullWidth : '';
 
     return (
-        <div style={widthBasedStyling}>
+        <div style={widthBasedStyling} className={theme}>
+            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
             <div className={css.header}>
                 <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
                 <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
@@ -69,7 +72,7 @@ const App : React.FunctionComponent = () => {
                                     {commentType}
                                 </div>
                                 <NewComment commentType={commentType} updateTeamData={updateTeamData}/>
-                                <Comments commentType={commentType} comments={teamData[commentType]}/>
+                                <Comments commentType={commentType} comments={teamData[commentType]} isDarkMode={darkMode}/>
                             </div>
                         ))}
                     </div>
