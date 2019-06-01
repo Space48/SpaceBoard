@@ -1,13 +1,17 @@
-.header {
-    text-align: center;
-}
-
 .container {
     display: flex;
 }
 
-.fullWidthMode {
+.containerFullWidth {
     display: block;
+}
+
+.header {
+    text-align: center;
+}
+
+.teamName {
+    text-transform: capitalize;
 }
 
 .column {
@@ -26,6 +30,7 @@
     font-size: 20px;
     line-height: 1;
     padding: 20px 0;
+    text-transform: capitalize;
 }
 
 .colorPreview {
