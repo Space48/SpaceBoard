@@ -1,0 +1,51 @@
+.app {
+    height: 100%;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.appDarkMode {
+    background: var(--color-grey-dark);
+    color: var(--color-off-white);
+}
+
+.container {
+    display: flex;
+}
+
+.containerFullWidth {
+    display: block;
+}
+
+.header {
+    text-align: center;
+}
+
+.teamName {
+    text-transform: capitalize;
+}
+
+.column {
+    flex-basis: 33.3333%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.column:nth-child(2) {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.name {
+    display: flex;
+    font-size: 20px;
+    line-height: 1;
+    padding: 20px 0;
+    text-transform: capitalize;
+}
+
+.colorPreview {
+    display: inline-block;
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+}

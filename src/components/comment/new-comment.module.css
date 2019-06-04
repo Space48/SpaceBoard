@@ -1,0 +1,25 @@
+.container {
+    background: var(--color-off-white);
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.textarea {
+    border: 0;
+    font-size: 14px;
+    min-height: 150px;
+    padding: 10px;
+    width: 100%;
+}
+
+.submit {
+    border: 0;
+    color: white;
+    padding: 8px 16px;
+}
+
+.submit:hover {
+    background: black;
+    color: white;
+}

@@ -1,0 +1,12 @@
+:root {
+    --color-green: #AAC2AA;
+    --color-red: #EC5C4E;
+    --color-grey-dark: #111;
+    --color-grey: #555;
+    --color-off-white: #EEEEEE;
+    --color-purple: #9A93BE;
+
+    --color-good: var(--color-green);
+    --color-bad: var(--color-red);
+    --color-actions: var(--color-purple);
+}

@@ -1,0 +1,23 @@
+.background--good {
+    background: var(--color-good);
+}
+
+.background--bad {
+    background: var(--color-bad);
+}
+
+.background--actions {
+    background: var(--color-actions);
+}
+
+.border-color--good {
+    border-color: var(--color-good);
+}
+
+.border-color--bad {
+    border-color: var(--color-bad);
+}
+
+.border-color--actions {
+    border-color: var(--color-actions);
+}

@@ -1,0 +1,12 @@
+.enter,
+.exitActive {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.enterActive,
+.exit,
+.enterDone {
+    opacity: 1;
+    transform: translateY(0);
+}
