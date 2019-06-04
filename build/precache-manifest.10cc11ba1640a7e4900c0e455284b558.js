@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb6fcd8be08568c48dc6d7eda8d554c9",
+    "revision": "f3ab05df3d361be106d468b6c925f7ce",
     "url": "/newretro/index.html"
   },
   {
-    "revision": "45e34fb5bfd6da631e74",
+    "revision": "3baf71e42c4ff2da3a63",
     "url": "/newretro/static/css/main.0a06e5f2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/newretro/static/js/2.b17a35cf.chunk.js"
   },
   {
-    "revision": "45e34fb5bfd6da631e74",
-    "url": "/newretro/static/js/main.0e922536.chunk.js"
+    "revision": "3baf71e42c4ff2da3a63",
+    "url": "/newretro/static/js/main.7da8dbf5.chunk.js"
   },
   {
     "revision": "99e76fbe301b6daeceb7",
