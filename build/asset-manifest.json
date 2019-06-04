@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0a06e5f2.chunk.css",
-    "main.js": "/static/js/main.97477fd0.chunk.js",
-    "main.js.map": "/static/js/main.97477fd0.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.b17a35cf.chunk.js": "/static/js/2.b17a35cf.chunk.js",
-    "static/js/2.b17a35cf.chunk.js.map": "/static/js/2.b17a35cf.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.fbd70801ba0f07d08a10757a9600f1b8.js": "/precache-manifest.fbd70801ba0f07d08a10757a9600f1b8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.0a06e5f2.chunk.css.map": "/static/css/main.0a06e5f2.chunk.css.map"
+    "main.css": "/newretro/static/css/main.0a06e5f2.chunk.css",
+    "main.js": "/newretro/static/js/main.0e922536.chunk.js",
+    "main.js.map": "/newretro/static/js/main.0e922536.chunk.js.map",
+    "runtime~main.js": "/newretro/static/js/runtime~main.cc432a58.js",
+    "runtime~main.js.map": "/newretro/static/js/runtime~main.cc432a58.js.map",
+    "static/js/2.b17a35cf.chunk.js": "/newretro/static/js/2.b17a35cf.chunk.js",
+    "static/js/2.b17a35cf.chunk.js.map": "/newretro/static/js/2.b17a35cf.chunk.js.map",
+    "index.html": "/newretro/index.html",
+    "precache-manifest.62d0949d13aa65c6603a70859cbebc7f.js": "/newretro/precache-manifest.62d0949d13aa65c6603a70859cbebc7f.js",
+    "service-worker.js": "/newretro/service-worker.js",
+    "static/css/main.0a06e5f2.chunk.css.map": "/newretro/static/css/main.0a06e5f2.chunk.css.map"
   }
 }
