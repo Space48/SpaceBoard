@@ -50,12 +50,16 @@ const App : React.FunctionComponent = () => {
     const widthBasedStyling = {
         fontSize: fullWidthMode ? '20px' : '16px'
     };
-    const theme = darkMode ? css.darkMode : '';
+    const theme = darkMode ? css.appDarkMode : '';
     const width = fullWidthMode ? css.containerFullWidth : '';
 
     return (
-        <div style={widthBasedStyling} className={theme}>
-            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
+        <div style={widthBasedStyling} className={`${theme} ${css.app}`}>
+
+            {/* Hide dark mode button as it's a WIP
+                <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
+            */}
+
             <div className={css.header}>
                 <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
                 <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>

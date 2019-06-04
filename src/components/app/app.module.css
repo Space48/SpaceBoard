@@ -1,4 +1,9 @@
-.darkMode {
+.app {
+    height: 100%;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.appDarkMode {
     background: var(--color-grey-dark);
     color: var(--color-off-white);
 }
