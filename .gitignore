@@ -13,7 +13,7 @@ teams/red/*.json
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
