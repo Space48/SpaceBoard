@@ -33,7 +33,11 @@ const App : React.FunctionComponent = () => {
     useEffect(() => {
         const url = `${baseUrl()}teams/${team}/week${weekNumber}.json`;
 
-        Axios.get(url)
+        Axios.get(url, {
+            headers: {
+                'Cache-Control': 'no-cache'
+            }
+        })
             .then((response: InterfaceTeamData) => {
                 // If the file doesn't exist the backend will create it then return HTML,
                 // because that HTML is a string it's safe to assume the data is incorrect
@@ -55,7 +59,7 @@ const App : React.FunctionComponent = () => {
     return (
         <div style={widthBasedStyling} className={`${theme} ${css.app}`}>
 
-            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
+            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme (WIP)</button>
 
             <div className={css.header}>
                 <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
