@@ -5,7 +5,7 @@ export const baseUrl = () : string => {
     const mode = process.env.NODE_ENV;
     switch (mode) {
         case 'production': {
-            return '/newretro/';
+            return '/retro/';
         }
         case 'development': {
             return './'

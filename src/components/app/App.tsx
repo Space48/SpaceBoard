@@ -55,9 +55,7 @@ const App : React.FunctionComponent = () => {
     return (
         <div style={widthBasedStyling} className={`${theme} ${css.app}`}>
 
-            {/* Hide dark mode button as it's a WIP
-                <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
-            */}
+            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
 
             <div className={css.header}>
                 <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
