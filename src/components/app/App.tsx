@@ -18,8 +18,6 @@ const emptyTeamData: InterfaceColumns = {
     actions: ['']
 };
 
-const weekNumber = getCurrentWeekNumber(new Date());
-
 const App : React.FunctionComponent = () => {
     // todo: Include a landing page so the team can be chosen (if Black/Yellow will use this?)
     const [ team ] = useState<Team>('red');
@@ -27,6 +25,7 @@ const App : React.FunctionComponent = () => {
     const [ shouldRender, setShouldRender ] = useState<boolean>(false);
     const [ fullWidthMode, setFullWidthMode ] = useState<boolean>(false);
     const [ darkMode, setDarkMode ] = useState<DarkMode>(false); // todo: Use context rather than thread props
+    const [ weekNumber, setWeekNumber ] = useState<number>(getCurrentWeekNumber(new Date()));
 
     // This is resonsible for updating the component state once when the component is mounted.
     // The empty array as a second argument means never update (no dependencies)
@@ -48,7 +47,7 @@ const App : React.FunctionComponent = () => {
 
                 setShouldRender(true);
             });
-    }, [team]); // Only re-run when team state changes
+    }, [team, weekNumber]); // Only re-run when team state changes
 
     const widthBasedStyling = {
         fontSize: fullWidthMode ? '20px' : '16px'
@@ -65,6 +64,10 @@ const App : React.FunctionComponent = () => {
                 <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
                 <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
                 <button onClick={() => setFullWidthMode(!fullWidthMode)}>Toggle Full Width Mode</button>
+
+                <h2>Currently Viewing week {weekNumber}</h2>
+                <button onClick={() => setWeekNumber(weekNumber - 1)}>Previous Week</button>
+                {weekNumber < getCurrentWeekNumber(new Date()) ? <button onClick={() => setWeekNumber(weekNumber + 1)}>Next Week</button> : null }
             </div>
 
             <CSSTransition in={shouldRender} timeout={200} classNames={{...appAnimations}}>

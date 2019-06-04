@@ -26,11 +26,11 @@ _Current_
 
 _Planned_
 
+1. Reporting for historical boards (Older json files are not currently removed)
+1. Dark mode (WIP)
 1. Per team boards (Semi done, hence the red directory in teams)
 1. Delete/Edit Existing comments
 1. Comment Authors (?)
-1. Reporting for historical boards (Older json files are not currently removed)
-1. Dark mode (WIP)
 
 _Possible_
 1. Choose custom colours
