@@ -26,14 +26,14 @@ _Current_
 
 _Planned_
 
-1. Reporting for historical boards (Older json files are not currently removed)
+1. Prevent blank comments from being added
 1. Dark mode (WIP)
 1. Per team boards (Semi done, hence the red directory in teams)
 1. Delete/Edit Existing comments
 1. Comment Authors (?)
 
 _Possible_
-1. Choose custom colours
+1. Choose custom colours/themes
 
 Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 
