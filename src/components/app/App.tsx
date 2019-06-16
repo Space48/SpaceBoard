@@ -1,4 +1,4 @@
-import { DarkMode, InterfaceColumns, InterfaceTeamData, Team } from '../../types/data';
+import { InterfaceColumns, InterfaceTeamData, Team } from '../../types/data';
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import getCurrentWeekNumber from '../../utilities/getWeekNumber';
@@ -24,7 +24,6 @@ const App : React.FunctionComponent = () => {
     const [ teamData, updateTeamData ] = useState<InterfaceColumns>(emptyTeamData);
     const [ shouldRender, setShouldRender ] = useState<boolean>(false);
     const [ fullWidthMode, setFullWidthMode ] = useState<boolean>(false);
-    const [ darkMode, setDarkMode ] = useState<DarkMode>(false); // todo: Use context rather than thread props
     const [ weekNumber, setWeekNumber ] = useState<number>(getCurrentWeekNumber(new Date()));
 
     // This is resonsible for updating the component state once when the component is mounted.
@@ -52,16 +51,14 @@ const App : React.FunctionComponent = () => {
     const widthBasedStyling = {
         fontSize: fullWidthMode ? '20px' : '16px'
     };
-    const theme = darkMode ? css.appDarkMode : '';
+
     const width = fullWidthMode ? css.containerFullWidth : '';
 
     return (
-        <div style={widthBasedStyling} className={`${theme} ${css.app}`}>
-
-            <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme (WIP)</button>
+        <div style={widthBasedStyling} className={css.app}>
 
             <div className={css.header}>
-                <h1>Space48 Retro Board - <span className={css.teamName}>{team}</span> team</h1>
+                <h1>Space48 Board - <span className={css.teamName}>{team}</span> team</h1>
                 <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
                 <button onClick={() => setFullWidthMode(!fullWidthMode)}>Toggle Full Width Mode</button>
 
@@ -79,8 +76,8 @@ const App : React.FunctionComponent = () => {
                                     <span className={`${css.colorPreview} background--${commentType}`} />
                                     {commentType}
                                 </div>
-                                <NewComment commentType={commentType} updateTeamData={updateTeamData}/>
-                                <Comments commentType={commentType} comments={teamData[commentType]} isDarkMode={darkMode}/>
+                                <NewComment commentType={commentType} updateTeamData={updateTeamData} />
+                                <Comments commentType={commentType} comments={teamData[commentType]} />
                             </div>
                         ))}
                     </div>

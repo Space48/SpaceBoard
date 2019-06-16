@@ -5,8 +5,7 @@
 }
 
 .enterActive,
-.exit,
-.enterDone {
+.exit {
     opacity: 1;
     transform: translateY(0);
 }
