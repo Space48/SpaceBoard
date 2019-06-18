@@ -17,15 +17,21 @@ export const NewComment : React.FunctionComponent<InterfaceProps> = (props: Inte
      */
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
+        const trimmedComment = comment.trim();
 
-        Axios.post(`${baseUrl()}new.php?commentType=` + props.commentType + '&text=' + comment)
-            .then(function (response: InterfaceTeamData) {
-                props.updateTeamData(response.data);
-                setComment(''); // Reset the comment
-            })
-            .catch(function (error: Object) {
-                console.log(error);
-            });
+        if (trimmedComment.length > 2) {
+            Axios.post(`${baseUrl()}new.php?commentType=` + props.commentType + '&text=' + comment)
+                .then(function (response: InterfaceTeamData) {
+                    props.updateTeamData(response.data);
+                    setComment(''); // Reset the comment
+                })
+                .catch(function (error: Object) {
+                    console.log(error);
+                });
+        } else {
+            console.log('Validation failed');
+            // todo: Add validation message
+        }
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
