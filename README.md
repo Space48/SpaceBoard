@@ -32,7 +32,7 @@ _Current_
 1. Ability to navigate previous weeks
 
 _Planned_
-
+1. Add configuration so team names, file paths, colors etc can be configured without delving into the app code
 1. Navigate directly to a week of choice rather than navigating through all previous weeks
 1. Per team boards. Frontend for this is mostly done. We need somewhere to add a team then allow users to change team (dropdown maybe?)
 1. Delete/Edit Existing comments
