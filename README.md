@@ -6,6 +6,10 @@ No longer requiring new accounts to be created on fun retro when the trial runs 
 The Space board allows users to populate 3 columns, good, bad, and action. 
 So at the end of each week/beginning of the week after the team can review what went well, what didn't go well, and how to improve.
 
+## Current State
+
+It is functional with some bugs. The data is opinionated towards Space48 teams which will be replaced with the functionality to add custom team names.
+
 ## Deployment
 _Not currently setup_
 
@@ -25,15 +29,15 @@ _Current_
 
 1. New File created each week automatically
 1. Add comments to one of 3 columns
-1. Ability to view previous weeks
+1. Ability to navigate previous weeks
 
 _Planned_
 
 1. Navigate directly to a week of choice rather than navigating through all previous weeks
-1. Dark mode
-1. Per team boards (Semi done, hence the red directory in teams)
+1. Per team boards. Frontend for this is mostly done. We need somewhere to add a team then allow users to change team (dropdown maybe?)
 1. Delete/Edit Existing comments
 1. Comment Authors (?)
+1. Dark mode
 
 _Possible_
 
