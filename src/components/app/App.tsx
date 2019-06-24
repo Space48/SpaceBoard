@@ -12,19 +12,20 @@ import { CSSTransition } from 'react-transition-group';
 
 const commentTypes: string[] = ['good', 'bad', 'actions'];
 
+// SEE https://stackoverflow.com/questions/54019830/issue-with-typing-an-object-typescript-error-no-index-signature
 const emptyTeamData: InterfaceColumns = {
-    good: [''],
-    bad: [''],
-    actions: ['']
+    good: {},
+    bad: {},
+    actions: {}
 };
 
-const App : React.FunctionComponent = () => {
-    // todo: Include a landing page so the team can be chosen (if Black/Yellow will use this?)
-    const [ team ] = useState<Team>('red');
-    const [ teamData, updateTeamData ] = useState<InterfaceColumns>(emptyTeamData);
-    const [ shouldRender, setShouldRender ] = useState<boolean>(false);
-    const [ fullWidthMode, setFullWidthMode ] = useState<boolean>(false);
-    const [ weekNumber, setWeekNumber ] = useState<number>(getCurrentWeekNumber(new Date()));
+const App: React.FunctionComponent = () => {
+    // todo: Include a landing page or option to change team to view
+    const [team] = useState<Team>('red');
+    const [teamData, updateTeamData] = useState<InterfaceColumns>(emptyTeamData);
+    const [shouldRender, setShouldRender] = useState<boolean>(false);
+    const [fullWidthMode, setFullWidthMode] = useState<boolean>(false);
+    const [weekNumber, setWeekNumber] = useState<number>(getCurrentWeekNumber(new Date()));
 
     // This is resonsible for updating the component state once when the component is mounted.
     // The empty array as a second argument means never update (no dependencies)
@@ -35,17 +36,18 @@ const App : React.FunctionComponent = () => {
             headers: {
                 'Cache-Control': 'no-cache'
             }
-        })
-            .then((response: InterfaceTeamData) => {
-                // If the file doesn't exist the backend will create it then return HTML,
-                // because that HTML is a string it's safe to assume the data is incorrect
-                // if the response data is not an object
-                if (response.hasOwnProperty('data') && typeof response.data === 'object') {
-                    updateTeamData(response.data);
-                }
+        }).then((response: InterfaceTeamData) => {
+            // If the file doesn't exist the backend will return HTML,
+            // because that HTML is a string it's safe to assume the data is incorrect
+            if (response.hasOwnProperty('data') && typeof response.data === 'object') {
+                console.log('JSON file does exist');
+                updateTeamData(response.data);
+            }
 
-                setShouldRender(true);
-            });
+            setShouldRender(true);
+        }).catch(function (error) {
+            console.log(error);
+        });
     }, [team, weekNumber]); // Only re-run when team state changes
 
     const widthBasedStyling = {
@@ -64,7 +66,8 @@ const App : React.FunctionComponent = () => {
 
                 <h2>Currently Viewing week {weekNumber}</h2>
                 <button onClick={() => setWeekNumber(weekNumber - 1)}>Previous Week</button>
-                {weekNumber < getCurrentWeekNumber(new Date()) ? <button onClick={() => setWeekNumber(weekNumber + 1)}>Next Week</button> : null }
+                {weekNumber < getCurrentWeekNumber(new Date()) ?
+                    <button onClick={() => setWeekNumber(weekNumber + 1)}>Next Week</button> : null}
             </div>
 
             <CSSTransition in={shouldRender} timeout={200} classNames={{...appAnimations}}>
