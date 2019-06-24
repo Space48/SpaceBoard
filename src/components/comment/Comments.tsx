@@ -14,6 +14,7 @@ export const Comments: React.FunctionComponent<InterfaceProps> = (props: Interfa
             <TransitionGroup component={null}>
                 {
                     // todo: Use a unique ID as the key rather than the comment, using index breaks the animations?!
+                    // The ID should be truly unique not just a simple integer else we may run into problems when switching weeks
                     props.comments.map((comment: string) => (
                             <CSSTransition key={comment} timeout={0} classNames={{...commentAnimations}}>
                                 <div className={css.comment}>
