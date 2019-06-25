@@ -25,13 +25,16 @@ _Not currently setup_
 1. Run `npm install && npm start`
 
 ## Functionality
+
 _Current_
 
-1. New File created each week automatically
+1. ~~New File created each week automatically~~
 1. Add comments to one of 3 columns
 1. Ability to navigate previous weeks
+1. Full Screen mode
 
 _Planned_
+
 1. Add configuration so team names, file paths, colors etc can be configured without delving into the app code
 1. Navigate directly to a week of choice rather than navigating through all previous weeks
 1. Per team boards. Frontend for this is mostly done. We need somewhere to add a team then allow users to change team (dropdown maybe?)
@@ -58,7 +61,7 @@ The frontend has been built with:
 * CSS Modules for scoped CSS (included with Create React App)
 * Node environment variables used to update URLs between local and production
 
-On loading the current week number is calculated and the app will check is a JSON file exists in `/teams/red`, if so it will retreive it and if not it will create it.
+~~On loading the current week number is calculated and the app will check is a JSON file exists in `/teams/red`, if so it will retreive it and if not it will create it.~~
 
 When a new comment is posted it is sent to new.php which populates the JSON file and retrieves the updated data, the app state then gets updated with this data and React will re-render.
 

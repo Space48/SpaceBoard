@@ -2,7 +2,7 @@
 .idea
 
 # data
-teams/red/*.json
+teams/*
 
 # dependencies
 /node_modules
