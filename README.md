@@ -11,7 +11,9 @@ So at the end of each week/beginning of the week after the team can review what 
 It is functional with some bugs. The data is opinionated towards Space48 teams which will be replaced with the functionality to add custom team names.
 
 ## Deployment
-_Not currently setup_
+Deployment is through envoyer.
+If changes required to new.php after deployment copy `new.php` to `persist/new.php`
+Envoyer builds the app on the server
 
 ## Prerequisites
 * Valet + (Or an alternative environment/server capable of running PHP)
