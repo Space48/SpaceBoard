@@ -18,7 +18,6 @@ const emptyTeamData: InterfaceColumns = {
 };
 
 const App: React.FunctionComponent = () => {
-    // todo: Include a landing page or option to change team to view
     const [team] = useState<Team>('red');
     const [teamData, updateTeamData] = useState<InterfaceColumns>(emptyTeamData);
     const [shouldRender, setShouldRender] = useState<boolean>(false);

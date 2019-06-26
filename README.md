@@ -20,29 +20,12 @@ Envoyer builds the app on the server
 1. Ensure you can load http://retro.test as this is currently how the backend (PHP) is accessed
 1. Run `npm install && npm start`
 
-## Functionality
+## Current Functionality
 
-_Current_
-1. ~~New File created each week automatically~~
-1. Add comments to one of 3 columns (good, bad, actions)
+1. Add comments to one of 3 columns (good, bad, actions) each week
 1. Ability to navigate week (next and previous weeks)
 1. Full Screen mode which is useful for presentation on larger screens such as TVs
 
-_Planned_
-1. Better UX/Styling
-1. Add configuration so team names, file paths, colors etc can be configured without delving into the app code
-1. Navigate directly to a week of choice rather than navigating through all previous weeks
-1. Per team boards. Frontend for this is mostly done. We need somewhere to add a team then allow users to change team (dropdown maybe?)
-1. Delete/Edit Existing comments
-1. Comment Authors
-1. Dark mode
-
-_Possible_
-1. Choose custom colours/themes
-1. Custom column names and order
-1. Use a custom time period and name rather than being force to use 1 week, e.g the ability to rename weeks to sprint, or set one sprint as 2 weeks.
-
-Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 
 ## How it works
 
