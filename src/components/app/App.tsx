@@ -9,10 +9,8 @@ import css from './app.module.css';
 import appAnimations from './app-animations.module.css';
 import { CSSTransition } from 'react-transition-group';
 
-
 const commentTypes: string[] = ['good', 'bad', 'actions'];
 
-// SEE https://stackoverflow.com/questions/54019830/issue-with-typing-an-object-typescript-error-no-index-signature
 const emptyTeamData: InterfaceColumns = {
     good: {},
     bad: {},
@@ -58,9 +56,8 @@ const App: React.FunctionComponent = () => {
 
     return (
         <div style={widthBasedStyling} className={css.app}>
-
             <div className={css.header}>
-                <h1>Space48 Board - <span className={css.teamName}>{team}</span> team</h1>
+                <h1>Space Board - <span className={css.teamName}>{team}</span> team</h1>
                 <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
                 <button onClick={() => setFullWidthMode(!fullWidthMode)}>Toggle Full Width Mode</button>
 

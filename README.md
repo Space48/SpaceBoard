@@ -1,14 +1,8 @@
-Internal Tool to replace fun retro
-
-This is in place to provide a secure place to have the retro boards rather than the public fun retro boards.
-No longer requiring new accounts to be created on fun retro when the trial runs out.
-
-The Space board allows users to populate 3 columns, good, bad, and action. 
-So at the end of each week/beginning of the week after the team can review what went well, what didn't go well, and how to improve.
+# Space Board
+Space Board is a tool used to keep a log of the current sprint so team members can make a note of what went well, what didn't, and what actions can be made for future improvements.
 
 ## Current State
-
-It is functional with some bugs. The data is opinionated towards Space48 teams which will be replaced with the functionality to add custom team names.
+It is functional with some bugs. As Space Board was initially built as an internal tool the data is currently opinionated towards Space48 teams which will be replaced with the functionality to add custom team names (or not use teams at all).
 
 ## Deployment
 Deployment is through envoyer.
@@ -16,9 +10,9 @@ If changes required to new.php after deployment copy `new.php` to `persist/new.p
 Envoyer builds the app on the server
 
 ## Prerequisites
-* Valet + (Or an alternative environment/server capable of running PHP)
-* Node
-* Yarn (although NPM will suffice)
+* A local environment/server capable of running PHP ([Valet+](https://github.com/weprovide/valet-plus) is recommended due to ease of use)
+* [Node](https://nodejs.org/en/) >= 8.10
+* [Yarn](https://yarnpkg.com/en/) (although NPM will suffice)
 
 ## Setup
 1. Clone the repo
@@ -29,25 +23,24 @@ Envoyer builds the app on the server
 ## Functionality
 
 _Current_
-
 1. ~~New File created each week automatically~~
-1. Add comments to one of 3 columns
-1. Ability to navigate previous weeks
-1. Full Screen mode
+1. Add comments to one of 3 columns (good, bad, actions)
+1. Ability to navigate week (next and previous weeks)
+1. Full Screen mode which is useful for presentation on larger screens such as TVs
 
 _Planned_
-
+1. Better UX/Styling
 1. Add configuration so team names, file paths, colors etc can be configured without delving into the app code
 1. Navigate directly to a week of choice rather than navigating through all previous weeks
 1. Per team boards. Frontend for this is mostly done. We need somewhere to add a team then allow users to change team (dropdown maybe?)
 1. Delete/Edit Existing comments
-1. Comment Authors (?)
+1. Comment Authors
 1. Dark mode
 
 _Possible_
-
 1. Choose custom colours/themes
-1. Use a custom term rather than weeks, e.g use days, or sprints.
+1. Custom column names and order
+1. Use a custom time period and name rather than being force to use 1 week, e.g the ability to rename weeks to sprint, or set one sprint as 2 weeks.
 
 Feel free to raise suggestions for features here: https://bitbucket.org/space48/retro/issues?status=new&status=open
 
@@ -62,8 +55,6 @@ The frontend has been built with:
 * Typescript for custom types/interfaces (included with Create React App)
 * CSS Modules for scoped CSS (included with Create React App)
 * Node environment variables used to update URLs between local and production
-
-~~On loading the current week number is calculated and the app will check is a JSON file exists in `/teams/red`, if so it will retreive it and if not it will create it.~~
 
 When a new comment is posted it is sent to new.php which populates the JSON file and retrieves the updated data, the app state then gets updated with this data and React will re-render.
 
