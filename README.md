@@ -2,7 +2,9 @@
 Space Board is a tool used to keep a log of the current sprint so team members can make a note of what went well, what didn't, and what actions can be made for future improvements.
 
 ## Current State
-It is functional with some bugs. As Space Board was initially built as an internal tool the data is currently opinionated towards Space48 teams which will be replaced with the functionality to add custom team names (or not use teams at all).
+It is functional with some bugs. 
+
+Whilst Space Board is functional it isn't quite ready for use by other teams as Space Board was initially built as an internal tool meaning the data is currently opinionated towards Space48 teams which will soon be replaced with the functionality to add custom team names (or not use teams at all).
 
 ## Deployment
 Deployment is through envoyer.
