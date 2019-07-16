@@ -5,9 +5,37 @@
 .comment {
     border-bottom: 1px solid var(--color-off-white);
     padding: 20px;
-    transition: opacity 1s ease-in, transform 0.3s ease-out;
+    transition: opacity 0.2s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
+/* This should be done in a loop, will need to use PostCSS or something similar */
+.comment:nth-child(1) {
+    transition-delay: 50ms;
+}
+.comment:nth-child(2) {
+    transition-delay: 150ms;
+}
+.comment:nth-child(3) {
+    transition-delay: 250ms;
+}
+.comment:nth-child(4) {
+    transition-delay: 350ms;
+}
+.comment:nth-child(5) {
+    transition-delay: 450ms;
+}
+.comment:nth-child(6) {
+    transition-delay: 550ms;
+}
+.comment:nth-child(7) {
+    transition-delay: 650ms;
+}
+.comment:nth-child(8) {
+    transition-delay: 750ms;
+}
+.comment:nth-child(9) {
+    transition-delay: 850ms;
+}
 .comment:last-child {
     border-bottom: 0;
 }
