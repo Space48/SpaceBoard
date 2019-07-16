@@ -24,7 +24,7 @@ const App: React.FunctionComponent = () => {
     const [fullWidthMode, setFullWidthMode] = useState<boolean>(false);
     const [weekNumber, setWeekNumber] = useState<number>(getCurrentWeekNumber(new Date()));
     const width = fullWidthMode ? css.containerFullWidth : '';
-    const widthBasedStyling = { fontSize: fullWidthMode ? '20px' : '16px'};
+    const widthBasedStyling = { fontSize: fullWidthMode ? '20px' : '16px' };
 
     // This is resonsible for updating the component state once when the component is mounted.
     // The empty array as a second argument means never update (no dependencies)
