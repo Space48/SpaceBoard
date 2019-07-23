@@ -23,6 +23,8 @@ const App: React.FunctionComponent = () => {
     const [shouldRender, setShouldRender] = useState<boolean>(false);
     const [fullWidthMode, setFullWidthMode] = useState<boolean>(false);
     const [weekNumber, setWeekNumber] = useState<number>(getCurrentWeekNumber(new Date()));
+    const width = fullWidthMode ? css.containerFullWidth : '';
+    const widthBasedStyling = { fontSize: fullWidthMode ? '20px' : '16px' };
 
     // This is resonsible for updating the component state once when the component is mounted.
     // The empty array as a second argument means never update (no dependencies)
@@ -47,24 +49,21 @@ const App: React.FunctionComponent = () => {
         });
     }, [team, weekNumber]); // Only re-run when team state changes
 
-    const widthBasedStyling = {
-        fontSize: fullWidthMode ? '20px' : '16px'
-    };
-
-    const width = fullWidthMode ? css.containerFullWidth : '';
 
     return (
         <div style={widthBasedStyling} className={css.app}>
-            <div className={css.header}>
-                <h1>Space Board - <span className={css.teamName}>{team}</span> team</h1>
-                <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
-                <button onClick={() => setFullWidthMode(!fullWidthMode)}>Toggle Full Width Mode</button>
+            <CSSTransition in={shouldRender} timeout={200} classNames={{...appAnimations}}>
+                <div className={`${css.header} ${appAnimations.container}`}>
+                    <h1>Space Board - <span className={css.teamName}>{team}</span> team</h1>
+                    <p>Click the button below to toggle full-width mode, this may be useful for displaying on TVs.</p>
+                    <button onClick={() => setFullWidthMode(!fullWidthMode)}>Toggle Full Width Mode</button>
 
-                <h2>Currently Viewing week {weekNumber}</h2>
-                <button onClick={() => setWeekNumber(weekNumber - 1)}>Previous Week</button>
-                {weekNumber < getCurrentWeekNumber(new Date()) ?
-                    <button onClick={() => setWeekNumber(weekNumber + 1)}>Next Week</button> : null}
-            </div>
+                    <h2>Currently Viewing week {weekNumber}</h2>
+                    <button onClick={() => setWeekNumber(weekNumber - 1)}>Previous Week</button>
+                    {weekNumber < getCurrentWeekNumber(new Date()) ?
+                        <button onClick={() => setWeekNumber(weekNumber + 1)}>Next Week</button> : null}
+                </div>
+            </CSSTransition>
 
             <CSSTransition in={shouldRender} timeout={200} classNames={{...appAnimations}}>
                 <div className={appAnimations.container}>
@@ -75,7 +74,7 @@ const App: React.FunctionComponent = () => {
                                     <span className={`${css.colorPreview} background--${commentType}`} />
                                     {commentType}
                                 </div>
-                                <NewComment commentType={commentType} updateTeamData={updateTeamData} />
+                                {weekNumber === getCurrentWeekNumber(new Date()) && <NewComment commentType={commentType} updateTeamData={updateTeamData} />}
                                 <Comments commentType={commentType} comments={teamData[commentType]} />
                             </div>
                         ))}
